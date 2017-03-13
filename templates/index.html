@@ -2,14 +2,60 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Hello, World!</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<title>Stock plot</title>
+		<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	</head>
+		<link
+		    href="http://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css"
+		    rel="stylesheet" type="text/css">
+		<link
+		    href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.11.1.min.css"
+		    rel="stylesheet" type="text/css">
+
+		<script src="http://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js"></script>
+		<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.11.1.min.js"></script>
+
+	
+    {{ script | safe }}
+
+  </head>
+
 	<body>
 		<div>
-  			<h1>Hello, World!</h1>
+  			<div class=metanav>
+
+		    <h4>
+		      Get historical stock data for a particular company. 
+		    </h4>
+
+		    <form id='ticker' method='post' action='index' >
+		      <p>
+		    Ticker symbol: <input type='text' name='stock' />
+		      </p>
+		      <p>
+		    ticker_type: <select name='type'>
+				  <option value="Close">Closing price</option>
+				  <option value="Adj. Close">Adjusted closing price</option>
+				  <option value="Open">Open price</option>
+				  <option value="Adj. Open">Adjusted open price</option>
+				</select>
+		      </p>
+		      <p>
+		    <input type='submit' value='Submit' />
+		      </p>
+		    </form>
+
+		  </div>
+		   <div>
+      		{{ div | safe }}
+  			</div>
+
 		</div>
+
+
+
+
+
+
 	</body>
 </html>
